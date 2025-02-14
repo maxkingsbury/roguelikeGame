@@ -1,0 +1,1 @@
+room_start_time = current_time; // Store the starting time
