@@ -1,5 +1,4 @@
-# roguelikeGame
-Roguelike Game (GML)
+# Roguelike Game (GML)
 
 A roguelike game built using GameMaker Language (GML), where players control a mage and battle through randomly spawned waves of enemies in a central tower. Features include:
 
