@@ -22,3 +22,5 @@ draw_rectangle(bar_x, bar_y, bar_x + (bar_width * xp_ratio), bar_y + bar_height,
 // Draw text
 draw_set_color(c_blue);
 draw_text(screen_width/2, bar_y -100, string(global.player_level));
+
+draw_text(screen_width/2, 50, string(global.wave_timer));

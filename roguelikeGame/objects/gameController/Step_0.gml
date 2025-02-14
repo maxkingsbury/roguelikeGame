@@ -3,6 +3,10 @@
 // Update enemy count
 global.enemy_count = instance_number(enemy1Obj); 
 
+if (wave_active && global.wave_timer > 0) {
+    global.wave_timer -= 1;
+}
+
 // Only start spawning when a new wave begins
 if (!wave_active) {
     wave_active = true;
@@ -23,8 +27,16 @@ if (wave_active && enemies_to_spawn > 0) {
         else if (side == 1) { spawn_x = room_width; spawn_y = irandom(room_height); } // Right
         else if (side == 2) { spawn_x = irandom(room_width); spawn_y = 0; } // Top
         else { spawn_x = irandom(room_width); spawn_y = room_height; } // Bottom
-        
-        var enemy = instance_create_layer(spawn_x, spawn_y, "Instances", enemy1Obj);
+
+        // Weighted random chance for enemy type
+        var enemy_type;
+        if (irandom(99) < 80) { // 80% chance to spawn a melee enemy
+            enemy_type = enemy1Obj;
+        } else { // 20% chance to spawn a ranged enemy
+            enemy_type = enemy2Obj;
+        }
+
+        var enemy = instance_create_layer(spawn_x, spawn_y, "Instances", enemy_type);
         enemy.image_xscale = 4;  // Make spawned enemies bigger
         enemy.image_yscale = 4;
 
@@ -33,9 +45,13 @@ if (wave_active && enemies_to_spawn > 0) {
 }
 
 // Check if wave is over and all enemies are gone
-if (enemies_to_spawn == 0 && global.enemy_count == 0 && wave_active && !waiting) {
-    waiting = true;
 
+if ((enemies_to_spawn == 0 && wave_active && !waiting) && (global.wave_timer <= 0 || global.enemy_count <= 0)) {
+	with (enemy1Obj) {
+        instance_destroy();
+    }
+	global.enemy_count = instance_number(enemy1Obj);
+    waiting = true;
     levelCompleteText = instance_create_layer(room_width / 2, room_height / 2, "Instances", levelCompleteObj);
 
     // Set timer for 3 seconds

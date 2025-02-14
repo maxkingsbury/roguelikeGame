@@ -28,6 +28,8 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"enemy2Obj","order":1,"path":"objects/enemy2Obj/enemy2Obj.yy",},
+    {"name":"enemyProjObj","order":2,"path":"objects/enemyProjObj/enemyProjObj.yy",},
     {"name":"exitButton","order":4,"path":"objects/exitButton/exitButton.yy",},
     {"name":"fireballObj","order":1,"path":"objects/fireballObj/fireballObj.yy",},
     {"name":"gameController","order":1,"path":"objects/gameController/gameController.yy",},
@@ -43,6 +45,8 @@
     {"name":"rSettings","order":3,"path":"rooms/rSettings/rSettings.yy",},
     {"name":"rShop","order":4,"path":"rooms/rShop/rShop.yy",},
     {"name":"rUpgrade","order":6,"path":"rooms/rUpgrade/rUpgrade.yy",},
+    {"name":"sEnemy2","order":1,"path":"sprites/sEnemy2/sEnemy2.yy",},
+    {"name":"sEnemyProj","order":2,"path":"sprites/sEnemyProj/sEnemyProj.yy",},
     {"name":"sFireball","order":1,"path":"sprites/sFireball/sFireball.yy",},
     {"name":"sIntroText","order":1,"path":"sprites/sIntroText/sIntroText.yy",},
     {"name":"sLevelComplete","order":2,"path":"sprites/sLevelComplete/sLevelComplete.yy",},
