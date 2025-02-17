@@ -23,4 +23,6 @@ draw_rectangle(bar_x, bar_y, bar_x + (bar_width * xp_ratio), bar_y + bar_height,
 draw_set_color(c_blue);
 draw_text(screen_width/2, bar_y -100, string(global.player_level));
 
-draw_text(screen_width/2, 50, string(global.wave_timer));
+var text_str = string(round(global.wave_timer / game_get_speed(gamespeed_fps)));
+var text_width = string_width(text_str); // Get the width of the text
+draw_text(((screen_width - text_width) / 2)+50, 50, text_str);

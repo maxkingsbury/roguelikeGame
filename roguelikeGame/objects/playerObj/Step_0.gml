@@ -36,8 +36,26 @@ if (fire_timer > 0) {
 
 // Fire projectiles when the player is not moving and the cooldown is over
 if (speed_x == 0 && speed_y == 0 && fire_timer == 0) {
-    // Find the nearest enemy
-    var nearest_enemy = instance_nearest(x, y, enemy1Obj);
+    var nearest_enemy = noone;
+    var min_distance = 999999; // Start with a very large number
+
+    // Array of enemy object types
+    var enemy_types = [enemy1Obj, enemy2Obj]; // Add all enemy objects here
+
+    // Iterate over each enemy type
+    for (var i = 0; i < array_length(enemy_types); i++) {
+        var obj_type = enemy_types[i];
+        var enemy_inst = instance_nearest(x, y, obj_type);
+
+        // If an enemy exists and is closer than the current nearest, update
+        if (enemy_inst != noone) {
+            var dist = point_distance(x, y, enemy_inst.x, enemy_inst.y);
+            if (dist < min_distance) {
+                min_distance = dist;
+                nearest_enemy = enemy_inst;
+            }
+        }
+    }
 
     // If there is an enemy, fire toward it
     if (nearest_enemy != noone) {
