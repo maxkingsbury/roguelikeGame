@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"pick_shop_weapons",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pick_shop_weapons",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

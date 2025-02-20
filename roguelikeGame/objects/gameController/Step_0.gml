@@ -59,6 +59,7 @@ if ((enemies_to_spawn == 0 && wave_active && !waiting) && (global.wave_timer <= 
         instance_destroy();
     }
 	global.enemy_count = instance_number(enemy1Obj);
+	global.shop_reset = true; // Enable shop reset after wave completion
     waiting = true;
     levelCompleteText = instance_create_layer(room_width / 2, room_height / 2, "Instances", levelCompleteObj);
 

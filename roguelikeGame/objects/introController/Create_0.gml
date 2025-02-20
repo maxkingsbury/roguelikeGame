@@ -12,3 +12,11 @@ global.fire_rate = 20;
 global.damageScalar = 1;
 
 global.enemy_count = 0;
+
+global.weapon_pool = [
+    {name: "Fire Staff", price: 10, weight: 5}, 
+    {name: "Ice Scepter", price: 15, weight: 3}, 
+    {name: "Lightning Rod", price: 20, weight: 2}, 
+    {name: "Demonic Tome", price: 30, weight: 1}
+];
+global.acquired_weapons = ["Basic Wand"];
