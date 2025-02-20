@@ -1,7 +1,6 @@
 // Set initial speed and direction
-speed = 10; // Adjust as needed
+speed = 8; // Adjust as needed
 direction = 0; // This will be set when the projectile is created
 image_xscale = 2;
 image_yscale = 2;
 hit = false;  // Set to false initially, allowing the first collision to work
-global.damageScalar = 1;

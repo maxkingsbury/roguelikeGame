@@ -3,7 +3,7 @@ image_yscale = 5;
 // Movement variables
 speed_x = 0;
 speed_y = 0;
-global.player_speed = 4;
+
 
 // Animation variables
 image_index = 0;

@@ -45,6 +45,7 @@
   },
   "name":"roguelikeGame",
   "resources":[
+    {"id":{"name":"fnt_calibri","path":"fonts/fnt_calibri/fnt_calibri.yy",},},
     {"id":{"name":"fnt_money_display","path":"fonts/fnt_money_display/fnt_money_display.yy",},},
     {"id":{"name":"coinObj","path":"objects/coinObj/coinObj.yy",},},
     {"id":{"name":"enemy1Obj","path":"objects/enemy1Obj/enemy1Obj.yy",},},
