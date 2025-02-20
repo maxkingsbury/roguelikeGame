@@ -1,7 +1,12 @@
 // STEP EVENT
 
+global.enemy_count = 0
+
 // Update enemy count
-global.enemy_count = instance_number(enemy1Obj); 
+var enemy_types = [enemy1Obj, enemy2Obj]
+for (var i = 0; i < array_length(enemy_types); i++) {
+	global.enemy_count += instance_number(enemy_types[i]);
+}
 
 if (wave_active && global.wave_timer > 0) {
     global.wave_timer -= 1;
@@ -48,6 +53,9 @@ if (wave_active && enemies_to_spawn > 0) {
 
 if ((enemies_to_spawn == 0 && wave_active && !waiting) && (global.wave_timer <= 0 || global.enemy_count <= 0)) {
 	with (enemy1Obj) {
+        instance_destroy();
+    }
+	with (enemy2Obj) {
         instance_destroy();
     }
 	global.enemy_count = instance_number(enemy1Obj);

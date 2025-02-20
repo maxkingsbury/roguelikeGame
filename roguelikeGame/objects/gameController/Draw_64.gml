@@ -2,7 +2,7 @@
 var screen_width = display_get_width();
 var screen_height = display_get_height();
 
-draw_set_font(fnt_money_display)
+draw_set_font(fnt_mainBig)
 // Define bar size
 var bar_width = 1000;
 var bar_height = 20;
@@ -29,14 +29,16 @@ var text_width = string_width(text_str); // Get the width of the text
 draw_text(((screen_width - text_width) / 2)+50, 50, text_str);
 
 draw_set_color(c_black);
-draw_rectangle(50, 30, 350, 200, false) 
+draw_rectangle(20, 30, 380, 200, false) 
 
-draw_set_font(fnt_calibri)
+draw_set_font(fnt_main)
 draw_set_color(c_white);
 var attSpd = string(global.fire_rate)
 var attDmg = string(global.damageScalar)
-draw_text(320, 50, "Attack Speed:   " + attSpd);
-draw_text(320, 80, "Attack Multiplier:   " + attDmg);
+draw_set_halign(fa_center);
+draw_text(200, 50, "Attack Speed:   " + attSpd);
+draw_text(200, 80, "Attack Multiplier:   " + attDmg);
+draw_set_halign(fa_right);
 
 
 

@@ -3,7 +3,7 @@
   "%Name":"sWarning1",
   "bboxMode":0,
   "bbox_bottom":111,
-  "bbox_left":18,
+  "bbox_left":30,
   "bbox_right":196,
   "bbox_top":6,
   "collisionKind":1,
