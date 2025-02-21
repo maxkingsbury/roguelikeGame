@@ -29,7 +29,9 @@ var text_width = string_width(text_str); // Get the width of the text
 draw_text(((screen_width - text_width) / 2)+50, 50, text_str);
 
 draw_set_color(c_black);
+draw_set_alpha(0.5)
 draw_rectangle(20, 30, 380, 200, false) 
+draw_set_alpha(1)
 
 draw_set_font(fnt_main)
 draw_set_color(c_white);

@@ -1,6 +1,7 @@
 // Move the projectile in the specified direction
 x += lengthdir_x(speed, direction);
 y += lengthdir_y(speed, direction);
+var basicDamage = 1
 
 // Ensure the projectile only hits once
 if (!hit) {
@@ -16,7 +17,7 @@ if (!hit) {
     if (enemy != noone) { // If an enemy is found
         with (enemy) {
             if (hp != undefined) {
-                hp -= 1 * global.damageScalar;  // Apply damage
+                hp -= basicDamage * global.damageScalar;  // Apply damage
             } 
         }
 

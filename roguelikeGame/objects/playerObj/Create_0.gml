@@ -13,4 +13,5 @@ frame_timer = 0; // Helps with frame switching
 frame_delay = 6; // Adjust for animation speed
 
 // Fire rate variables
-fire_timer = 0; // Timer to track the cooldown
+fire_timer_basic = 0; // Timer to track the cooldown
+fire_timer_fireball = 0;

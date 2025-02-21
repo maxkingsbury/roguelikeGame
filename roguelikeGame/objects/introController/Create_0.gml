@@ -1,4 +1,4 @@
-global.money = 0;
+global.money = 20;
 
 global.wave_number = 1;
 
@@ -14,9 +14,10 @@ global.damageScalar = 1;
 global.enemy_count = 0;
 
 global.weapon_pool = [
-    {name: "Fire Staff", price: 10, weight: 5}, 
-    {name: "Ice Scepter", price: 15, weight: 3}, 
-    {name: "Lightning Rod", price: 20, weight: 2}, 
-    {name: "Demonic Tome", price: 30, weight: 1}
+    {name: "Fire Staff", price: 10, weight: 5, bought : false}, 
+    {name: "Ice Scepter", price: 15, weight: 3, bought : false}, 
+    {name: "Lightning Rod", price: 20, weight: 2, bought : false}, 
+    {name: "Demonic Tome", price: 30, weight: 1, bought : false}
 ];
 global.acquired_weapons = ["Basic Wand"];
+global.shop_reset = true;

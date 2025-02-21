@@ -1,5 +1,4 @@
 // Reset speed each frame
-
 speed_x = 0;
 speed_y = 0;
 
@@ -29,41 +28,31 @@ image_index = 0; // Reset to idle frame
 image_xscale = 5 * last_direction; // Keeps size 5 but flips left/right
 image_yscale = 5; // Ensure vertical scale stays correct
 
+// Fire weapon function with individual cooldowns
 function fire_weapon(weapon_name, direction) {
     var proj;
-    
+
     if (weapon_name == "Basic Wand") {
         proj = instance_create_layer(x, y, "Instances", basicObj);
     } 
     else if (weapon_name == "Fire Staff") {
         proj = instance_create_layer(x, y, "Instances", fireballObj);
-        proj.speed *= 1.2; // Fireball moves faster
-        proj.damage *= 1.5; // Fireball deals more damage
     }
-    else if (weapon_name == "Ice Scepter") {
-        proj = instance_create_layer(x, y, "Instances", iceShardObj);
-        proj.speed *= 0.8; // Ice moves slower
-        proj.freeze_chance = 20; // 20% chance to slow enemy
-    }
-    else if (weapon_name == "Lightning Rod") {
-        proj = instance_create_layer(x, y, "Instances", lightningBoltObj);
-        proj.chain_hits = 2; // Chains to extra enemies
-    }
-    else if (weapon_name == "Demonic Tome") {
-        proj = instance_create_layer(x, y, "Instances", darkOrbObj);
-        proj.pierce = 3; // Hits multiple enemies
-    }
-    
+
     proj.direction = direction;
 }
 
-// Ensure fire_timer properly counts down
-if (fire_timer > 0) {
-    fire_timer -= 1;
+// Ensure fire timers properly count down for each weapon
+if (fire_timer_basic > 0) {
+    fire_timer_basic -= 1;
+}
+if (fire_timer_fireball > 0) {
+    fire_timer_fireball -= 1;
 }
 
-// Auto-fire when the player is not moving
-if (speed_x == 0 && speed_y == 0 && fire_timer == 0) {
+
+// Auto-fire when the player is not moving and cooldown has passed
+if (speed_x == 0 && speed_y == 0) {
     var nearest_enemy = noone;
     var min_distance = 999999;
 
@@ -82,17 +71,27 @@ if (speed_x == 0 && speed_y == 0 && fire_timer == 0) {
         }
     }
 
-    // Fire each acquired weapon
+    // Fire each acquired weapon if the cooldown is over
     for (var i = 0; i < array_length(global.acquired_weapons); i++) {
         var weapon = global.acquired_weapons[i];
-
+		var angle_to_enemy = 0;
         if (nearest_enemy != noone) {
-            var angle_to_enemy = point_direction(x, y, nearest_enemy.x, nearest_enemy.y);
-            fire_weapon(weapon, angle_to_enemy);
+            angle_to_enemy = point_direction(x, y, nearest_enemy.x, nearest_enemy.y);
         } else {
-            fire_weapon(weapon, (last_direction == -1) ? 0 : 180);
+            if (last_direction == -1) {
+                angle_to_enemy = 0; // Right
+            } else {
+                angle_to_enemy = 180; // Left
+            }
+        }
+        // Check if cooldown for each weapon is done
+        if (weapon == "Basic Wand" && fire_timer_basic <= 0) {
+            fire_weapon("Basic Wand", angle_to_enemy);
+            fire_timer_basic = global.fire_rate * 1; // Reset the cooldown for Basic Wand
+        }
+        else if (weapon == "Fire Staff" && fire_timer_fireball <= 0) {
+            fire_weapon("Fire Staff", angle_to_enemy);
+            fire_timer_fireball = global.fire_rate * 2; // Reset the cooldown for Fire Staff (longer cooldown)
         }
     }
-
-    fire_timer = global.fire_rate; // Reset attack cooldown
 }

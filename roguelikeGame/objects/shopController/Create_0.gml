@@ -1,26 +1,50 @@
-// Check if the shop needs to reset (only after a wave is completed)
+// Manually set the clickable area coordinates for testing
+weapon1_x_start = 710; // X start position for weapon 1
+weapon1_x_end = 910;   // X end position for weapon 1
+weapon1_y_start = 200; // Y start position for weapon 1
+weapon1_y_end = 280;   // Y end position for weapon 1
+
+weapon2_x_start = 1010; // X start position for weapon 2
+weapon2_x_end = 1210;   // X end position for weapon 2
+weapon2_y_start = 200; // Y start position for weapon 2
+weapon2_y_end = 280;   // Y end position for weapon 2
+
+// Create Event – Setup Shop Options
 if (global.shop_reset) {
     // Step 1: Filter out already owned weapons
     var available_weapons = [];
     for (var i = 0; i < array_length(global.weapon_pool); i++) {
-        var weapon_name = global.weapon_pool[i].name;
-        if (!array_contains(global.acquired_weapons, weapon_name)) {
-            array_push(available_weapons, global.weapon_pool[i]);
+        var weapon = global.weapon_pool[i];
+        if (!array_contains(global.acquired_weapons, weapon.name)) {
+            array_push(available_weapons, weapon);
         }
     }
 
-    // Step 2: Select two weapons based on weight (rarity)
+    // Step 2: Select two weapons based on rarity
     var shop_weapons = [];
     while (array_length(shop_weapons) < 2 && array_length(available_weapons) > 0) {
-        var chosen = weighted_random(available_weapons); // Function to pick based on weight
+        var chosen = weighted_random(available_weapons); // Pick weapon by rarity
+        
+        // Add chosen weapon to the shop weapons list
         array_push(shop_weapons, chosen);
-        array_delete(available_weapons, chosen, 1); // Remove chosen weapon to avoid duplicates
+
+        // Remove chosen weapon from available_weapons to avoid duplicate picks
+        var index_to_remove = -1;
+        for (var j = 0; j < array_length(available_weapons); j++) {
+            if (available_weapons[j] == chosen) {
+                index_to_remove = j;
+                break;
+            }
+        }
+        if (index_to_remove != -1) {
+            array_delete(available_weapons, index_to_remove, 1); // Remove weapon from available list
+        }
     }
 
-    // Store the chosen weapons for display in the shop
-    global.shop_weapon_1 = shop_weapons[0];
-    global.shop_weapon_2 = shop_weapons[1];
+    // Step 3: Store the chosen weapons in globals for display in the shop
+    global.shop_weapon_1 = array_length(shop_weapons) > 0 ? shop_weapons[0] : undefined;
+    global.shop_weapon_2 = array_length(shop_weapons) > 1 ? shop_weapons[1] : undefined;
 
-    // Reset the shop flag
+    // Step 4: Reset the shop flag after picking
     global.shop_reset = false;
 }

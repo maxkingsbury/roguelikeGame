@@ -22,7 +22,7 @@ if (!wave_active) {
 if (wave_active && enemies_to_spawn > 0) {
     spawn_timer -= 1;
     if (spawn_timer <= 0) {
-        spawn_timer = 60; // Spawn interval (adjust as needed)
+        spawn_timer = irandom(30)+ 30; // Spawn interval (adjust as needed)
 
         // Random spawn position around screen edge
         var spawn_x, spawn_y;
