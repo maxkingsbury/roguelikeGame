@@ -34,12 +34,42 @@ function fire_weapon(weapon_name, direction) {
 
     if (weapon_name == "Basic Wand") {
         proj = instance_create_layer(x, y, "Instances", basicObj);
+		proj.direction = direction;
     } 
     else if (weapon_name == "Fire Staff") {
         proj = instance_create_layer(x, y, "Instances", fireballObj);
+		proj.direction = direction;
     }
+	else if (weapon_name == "Ice Staff") {
+        proj = instance_create_layer(x, y, "Instances", iceShardObj);
+		proj.direction = direction;
+    }
+	else if (weapon_name == "Lightning Staff") {
+        // Find nearest enemy
+        var nearest_enemy = noone;
+        var min_distance = 999999;
 
-    proj.direction = direction;
+        var enemy_types = [enemy1Obj, enemy2Obj]; // Add your enemy types here
+        for (var i = 0; i < array_length(enemy_types); i++) {
+            var obj_type = enemy_types[i];
+            var enemy_inst = instance_nearest(x, y, obj_type);
+
+            if (enemy_inst != noone) {
+                var dist = point_distance(x, y, enemy_inst.x, enemy_inst.y);
+                if (dist < min_distance) {
+                    min_distance = dist;
+                    nearest_enemy = enemy_inst;
+                }
+            }
+        }
+
+        // Only fire if a valid enemy is found
+        if (nearest_enemy != noone) {
+            proj = instance_create_layer(x, y, "Instances", lightningObj);
+            proj.target = nearest_enemy;  // Assign the nearest enemy as the target
+            proj.lightning_timer = 10;  // Set the lightning duration (10 frames)
+        }
+    }
 }
 
 // Ensure fire timers properly count down for each weapon
@@ -49,7 +79,12 @@ if (fire_timer_basic > 0) {
 if (fire_timer_fireball > 0) {
     fire_timer_fireball -= 1;
 }
-
+if (fire_timer_iceShard > 0) {
+    fire_timer_iceShard -= 1;
+}
+if (fire_timer_lightning > 0) {
+    fire_timer_lightning -= 1;
+}
 
 // Auto-fire when the player is not moving and cooldown has passed
 if (speed_x == 0 && speed_y == 0) {
@@ -76,7 +111,10 @@ if (speed_x == 0 && speed_y == 0) {
         var weapon = global.acquired_weapons[i];
 		var angle_to_enemy = 0;
         if (nearest_enemy != noone) {
-            angle_to_enemy = point_direction(x, y, nearest_enemy.x, nearest_enemy.y);
+            var base_direction = point_direction(x, y, nearest_enemy.x, nearest_enemy.y);
+		    var spread_angle = random_range(-5, 5);
+		    angle_to_enemy = base_direction + spread_angle;
+			
         } else {
             if (last_direction == -1) {
                 angle_to_enemy = 0; // Right
@@ -92,6 +130,14 @@ if (speed_x == 0 && speed_y == 0) {
         else if (weapon == "Fire Staff" && fire_timer_fireball <= 0) {
             fire_weapon("Fire Staff", angle_to_enemy);
             fire_timer_fireball = global.fire_rate * 2; // Reset the cooldown for Fire Staff (longer cooldown)
+        }
+		else if (weapon == "Ice Staff" && fire_timer_iceShard <= 0) {
+            fire_weapon("Ice Staff", angle_to_enemy);
+            fire_timer_iceShard = global.fire_rate * 0.7; // Reset the cooldown for Fire Staff (longer cooldown)
+        }
+		else if (weapon == "Lightning Staff" && fire_timer_lightning <= 0) {
+            fire_weapon("Lightning Staff", angle_to_enemy);
+            fire_timer_lightning = global.fire_rate * 5; // Adjusted cooldown
         }
     }
 }

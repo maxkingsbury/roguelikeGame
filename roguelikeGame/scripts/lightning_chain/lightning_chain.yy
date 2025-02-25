@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"lightning_chain",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"lightning_chain",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
