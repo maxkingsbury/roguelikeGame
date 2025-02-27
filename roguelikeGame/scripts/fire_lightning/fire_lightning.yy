@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"lightning_chain",
+  "%Name":"fire_lightning",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"lightning_chain",
+  "name":"fire_lightning",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

@@ -45,30 +45,7 @@ function fire_weapon(weapon_name, direction) {
 		proj.direction = direction;
     }
 	else if (weapon_name == "Lightning Staff") {
-        // Find nearest enemy
-        var nearest_enemy = noone;
-        var min_distance = 999999;
-
-        var enemy_types = [enemy1Obj, enemy2Obj]; // Add your enemy types here
-        for (var i = 0; i < array_length(enemy_types); i++) {
-            var obj_type = enemy_types[i];
-            var enemy_inst = instance_nearest(x, y, obj_type);
-
-            if (enemy_inst != noone) {
-                var dist = point_distance(x, y, enemy_inst.x, enemy_inst.y);
-                if (dist < min_distance) {
-                    min_distance = dist;
-                    nearest_enemy = enemy_inst;
-                }
-            }
-        }
-
-        // Only fire if a valid enemy is found
-        if (nearest_enemy != noone) {
-            proj = instance_create_layer(x, y, "Instances", lightningObj);
-            proj.target = nearest_enemy;  // Assign the nearest enemy as the target
-            proj.lightning_timer = 10;  // Set the lightning duration (10 frames)
-        }
+        fire_lightning();
     }
 }
 

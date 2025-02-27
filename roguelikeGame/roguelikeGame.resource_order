@@ -54,7 +54,7 @@
     {"name":"rShop","order":4,"path":"rooms/rShop/rShop.yy",},
     {"name":"rUpgrade","order":6,"path":"rooms/rUpgrade/rUpgrade.yy",},
     {"name":"add_weapon","order":3,"path":"scripts/add_weapon/add_weapon.yy",},
-    {"name":"lightning_chain","order":4,"path":"scripts/lightning_chain/lightning_chain.yy",},
+    {"name":"fire_lightning","order":5,"path":"scripts/fire_lightning/fire_lightning.yy",},
     {"name":"pick_shop_weapons","order":1,"path":"scripts/pick_shop_weapons/pick_shop_weapons.yy",},
     {"name":"weighted_random_index","order":2,"path":"scripts/weighted_random_index/weighted_random_index.yy",},
     {"name":"sBack","order":15,"path":"sprites/sBack/sBack.yy",},

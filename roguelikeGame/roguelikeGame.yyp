@@ -80,7 +80,7 @@
     {"id":{"name":"rStartMenu","path":"rooms/rStartMenu/rStartMenu.yy",},},
     {"id":{"name":"rUpgrade","path":"rooms/rUpgrade/rUpgrade.yy",},},
     {"id":{"name":"add_weapon","path":"scripts/add_weapon/add_weapon.yy",},},
-    {"id":{"name":"lightning_chain","path":"scripts/lightning_chain/lightning_chain.yy",},},
+    {"id":{"name":"fire_lightning","path":"scripts/fire_lightning/fire_lightning.yy",},},
     {"id":{"name":"pick_shop_weapons","path":"scripts/pick_shop_weapons/pick_shop_weapons.yy",},},
     {"id":{"name":"weighted_random_index","path":"scripts/weighted_random_index/weighted_random_index.yy",},},
     {"id":{"name":"weighted_random","path":"scripts/weighted_random/weighted_random.yy",},},
