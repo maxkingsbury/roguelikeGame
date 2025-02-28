@@ -19,32 +19,33 @@ if (global.shop_reset) {
             array_push(available_weapons, weapon);
         }
     }
-
-    // Step 2: Select two weapons based on rarity
-    var shop_weapons = [];
-    while (array_length(shop_weapons) < 2 && array_length(available_weapons) > 0) {
-        var chosen = weighted_random(available_weapons); // Pick weapon by rarity
+	if (array_length(available_weapons) > 2) {
+	    // Step 2: Select two weapons based on rarity
+	    var shop_weapons = [];
+	    while (array_length(shop_weapons) < 2 && array_length(available_weapons) > 0) {
+	        var chosen = weighted_random(available_weapons); // Pick weapon by rarity
         
-        // Add chosen weapon to the shop weapons list
-        array_push(shop_weapons, chosen);
+	        // Add chosen weapon to the shop weapons list
+	        array_push(shop_weapons, chosen);
 
-        // Remove chosen weapon from available_weapons to avoid duplicate picks
-        var index_to_remove = -1;
-        for (var j = 0; j < array_length(available_weapons); j++) {
-            if (available_weapons[j] == chosen) {
-                index_to_remove = j;
-                break;
-            }
-        }
-        if (index_to_remove != -1) {
-            array_delete(available_weapons, index_to_remove, 1); // Remove weapon from available list
-        }
-    }
+	        // Remove chosen weapon from available_weapons to avoid duplicate picks
+	        var index_to_remove = -1;
+	        for (var j = 0; j < array_length(available_weapons); j++) {
+	            if (available_weapons[j] == chosen) {
+	                index_to_remove = j;
+	                break;
+	            }
+	        }
+	        if (index_to_remove != -1) {
+	            array_delete(available_weapons, index_to_remove, 1); // Remove weapon from available list
+	        }
+	    }
 
-    // Step 3: Store the chosen weapons in globals for display in the shop
-    global.shop_weapon_1 = array_length(shop_weapons) > 0 ? shop_weapons[0] : undefined;
-    global.shop_weapon_2 = array_length(shop_weapons) > 1 ? shop_weapons[1] : undefined;
+	    // Step 3: Store the chosen weapons in globals for display in the shop
+	    global.shop_weapon_1 = array_length(shop_weapons) > 0 ? shop_weapons[0] : undefined;
+	    global.shop_weapon_2 = array_length(shop_weapons) > 1 ? shop_weapons[1] : undefined;
 
-    // Step 4: Reset the shop flag after picking
-    global.shop_reset = false;
+	    // Step 4: Reset the shop flag after picking
+	    global.shop_reset = false;
+	}
 }

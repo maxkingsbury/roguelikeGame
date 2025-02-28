@@ -15,7 +15,8 @@ draw_set_color(c_white);
 draw_text(screen_width / 2, 100, "Coins: " + string(global.money));
 
 draw_set_color(#333333); // Color for the clickable area rectangle
-draw_rectangle(650, 190, 1270, 450, false); // Weapon 1
+draw_rectangle(650, 175, 1270, 450, false); // Weapons
+draw_rectangle(400, 575, 1520, 850, false);
 
 
 draw_set_color(#4fd2ff); // Color for the clickable area rectangle
@@ -58,10 +59,10 @@ var weapon2_y_center = weapon2_y_start;
 
 // Draw Weapon 1 Sprite Above Its Box
 if (global.shop_weapon_1.sprite != noone) {
-    draw_sprite_ext(global.shop_weapon_1.sprite, 0, weapon1_x_center, weapon1_y_center - 50, 5, 5, 0, c_white, 1);
+    draw_sprite_ext(global.shop_weapon_1.sprite, 0, weapon1_x_center, weapon1_y_center - 55, 5, 5, 0, c_white, 1);
 }
 
 // Draw Weapon 2 Sprite Above Its Box
 if (global.shop_weapon_2.sprite != noone) {
-    draw_sprite_ext(global.shop_weapon_2.sprite, 0, weapon2_x_center, weapon2_y_center - 50, 5, 5, 0, c_white, 1);
+    draw_sprite_ext(global.shop_weapon_2.sprite, 0, weapon2_x_center, weapon2_y_center - 55, 5, 5, 0, c_white, 1);
 }

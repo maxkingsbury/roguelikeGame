@@ -2,7 +2,7 @@ function fire_lightning() {
     if (fire_timer_lightning > 0) return;
     
     var max_jumps = 2; // How many enemies the lightning can chain to
-    var damage = 3 * global.damageScalar;
+    var damage = 2 * global.damageScalar;
     var chain_targets = [];
     
     // Find the first target
@@ -30,7 +30,7 @@ function fire_lightning() {
     for (var j = 1; j < max_jumps; j++) {
         var last_target = chain_targets[j - 1];
         var next_enemy = noone;
-        min_distance = 495;
+        min_distance = 350;
 
         for (var i = 0; i < array_length(global.enemy_types); i++) {
             with (global.enemy_types[i]) {
