@@ -17,7 +17,7 @@ if (wave_active && global.wave_timer > 0) {
 // Only start spawning when a new wave begins
 if (!wave_active) {
     wave_active = true;
-    enemies_to_spawn = 3 + (global.wave_number * 2); // Increase enemies per wave
+    enemies_to_spawn = 15 + (global.wave_number * 2); // Increase enemies per wave
     spawn_timer = 0;
 }
 // Enemy spawning system
