@@ -3,7 +3,7 @@
 A roguelike game built using GameMaker Language (GML), where players control a mage and battle through randomly spawned waves of enemies in a central tower. Features include:
 
 
-- Player-controlled mage: Move and fight with auto-attacks using projectiles.
+- Player-controlled character: Move and fight with auto-attacks using projectiles.
   
 - Dynamic enemy waves: Enemies spawn and increase in difficulty with each wave.
 
@@ -16,4 +16,4 @@ A roguelike game built using GameMaker Language (GML), where players control a m
 - Shop: Use currency to unlock special upgrades separate from level-ups.
 
 
-This project is in active development and will evolve with more content, enemy variety, and sound effects.
+This project is in active development and will evolve with more content, enemy variety.
