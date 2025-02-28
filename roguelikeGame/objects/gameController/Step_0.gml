@@ -17,14 +17,14 @@ if (wave_active && global.wave_timer > 0) {
 // Only start spawning when a new wave begins
 if (!wave_active) {
     wave_active = true;
-    enemies_to_spawn = 15 + (global.wave_number * 2); // Increase enemies per wave
+    enemies_to_spawn = 10 + (global.wave_number * 3); // Increase enemies per wave
     spawn_timer = 0;
 }
 // Enemy spawning system
 if (wave_active && enemies_to_spawn > 0) {
     spawn_timer -= 1;
     if (spawn_timer <= 0) {
-        spawn_timer = irandom(30)+ 30; // Spawn interval (adjust as needed)
+        spawn_timer = irandom(30)+ 15; // Spawn interval (adjust as needed)
 
         // Random spawn position around screen edge
         var spawn_x, spawn_y;
