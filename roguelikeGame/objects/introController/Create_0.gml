@@ -2,8 +2,12 @@ global.money = 50;
 
 global.wave_number = 1;
 
+global.player_hp = 5;
+global.player_max_hp = 5;
+
 global.player_xp = 0;        // Current XP
 global.player_level = 1;     // Player Level
+
 global.player_speed = 4;
 global.xp_needed = 30;      // XP needed for the next level
 global.levelUpCount = 0;
@@ -22,3 +26,5 @@ global.acquired_weapons = ["Basic Wand"];
 global.shop_reset = true;
 
 global.enemy_types = [enemy1Obj, enemy2Obj];
+
+global.iframes = 60;

@@ -49,6 +49,7 @@
     {"id":{"name":"fnt_calibri","path":"fonts/fnt_calibri/fnt_calibri.yy",},},
     {"id":{"name":"fnt_main","path":"fonts/fnt_main/fnt_main.yy",},},
     {"id":{"name":"fnt_mainBig","path":"fonts/fnt_mainBig/fnt_mainBig.yy",},},
+    {"id":{"name":"fnt_mainSmall","path":"fonts/fnt_mainSmall/fnt_mainSmall.yy",},},
     {"id":{"name":"fnt_money_display","path":"fonts/fnt_money_display/fnt_money_display.yy",},},
     {"id":{"name":"backButton","path":"objects/backButton/backButton.yy",},},
     {"id":{"name":"basicObj","path":"objects/basicObj/basicObj.yy",},},

@@ -32,6 +32,7 @@
     {"name":"fnt_calibri","order":1,"path":"fonts/fnt_calibri/fnt_calibri.yy",},
     {"name":"fnt_main","order":2,"path":"fonts/fnt_main/fnt_main.yy",},
     {"name":"fnt_mainBig","order":3,"path":"fonts/fnt_mainBig/fnt_mainBig.yy",},
+    {"name":"fnt_mainSmall","order":4,"path":"fonts/fnt_mainSmall/fnt_mainSmall.yy",},
     {"name":"backButton","order":5,"path":"objects/backButton/backButton.yy",},
     {"name":"basicObj","order":2,"path":"objects/basicObj/basicObj.yy",},
     {"name":"enemy2Obj","order":1,"path":"objects/enemy2Obj/enemy2Obj.yy",},

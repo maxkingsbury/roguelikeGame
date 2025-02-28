@@ -5,6 +5,7 @@ y += lengthdir_y(speed, direction);
 // Check for collision with player
 var player_hit = instance_place(x, y, playerObj);
 if (player_hit != noone) {
+	global.player_hp -= 1;
     instance_destroy(); // Destroy the projectile
 }
 

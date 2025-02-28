@@ -19,7 +19,7 @@ if (global.shop_reset) {
             array_push(available_weapons, weapon);
         }
     }
-	if (array_length(available_weapons) > 2) {
+	if (array_length(available_weapons) >= 2) {
 	    // Step 2: Select two weapons based on rarity
 	    var shop_weapons = [];
 	    while (array_length(shop_weapons) < 2 && array_length(available_weapons) > 0) {

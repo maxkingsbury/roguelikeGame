@@ -2,6 +2,8 @@
 
 global.enemy_count = 0
 
+if (global.player_hp == 0) {room_goto(rStartMenu);}
+
 // Update enemy count
 var enemy_types = [enemy1Obj, enemy2Obj]
 for (var i = 0; i < array_length(enemy_types); i++) {

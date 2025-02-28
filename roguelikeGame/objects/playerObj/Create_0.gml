@@ -5,6 +5,7 @@ speed_x = 0;
 speed_y = 0;
 
 
+
 // Animation variables
 image_index = 0;
 image_speed = 0; // We will manually control frame switching
