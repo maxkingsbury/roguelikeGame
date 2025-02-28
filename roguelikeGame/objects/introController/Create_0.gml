@@ -14,11 +14,11 @@ global.damageScalar = 1;
 global.enemy_count = 0;
 
 global.weapon_pool = [
-    {name: "Fire Staff", price: 10, weight: 5, bought : false}, 
-    {name: "Ice Staff", price: 15, weight: 3, bought : false}, 
-    {name: "Lightning Staff", price: 20, weight: 2, bought : false}, 
+    {name: "Fire Staff", price: 10, weight: 5, bought : false, sprite : sFireStaff}, 
+    {name: "Ice Staff", price: 15, weight: 3, bought : false, sprite : sIceStaff}, 
+    {name: "Lightning Staff", price: 20, weight: 2, bought : false, sprite : sLightningStaff}, 
 ];
-global.acquired_weapons = ["Basic Wand", "Lightning Staff"];
+global.acquired_weapons = ["Basic Wand"];
 global.shop_reset = true;
 
 global.enemy_types = [enemy1Obj, enemy2Obj];

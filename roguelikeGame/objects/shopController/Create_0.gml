@@ -1,13 +1,13 @@
 // Manually set the clickable area coordinates for testing
 weapon1_x_start = 700; // X start position for weapon 1
 weapon1_x_end = 920;   // X end position for weapon 1
-weapon1_y_start = 200; // Y start position for weapon 1
-weapon1_y_end = 280;   // Y end position for weapon 1
+weapon1_y_start = 300; // Y start position for weapon 1
+weapon1_y_end = 380;   // Y end position for weapon 1
 
 weapon2_x_start = 1000; // X start position for weapon 2
 weapon2_x_end = 1220;   // X end position for weapon 2
-weapon2_y_start = 200; // Y start position for weapon 2
-weapon2_y_end = 280;   // Y end position for weapon 2
+weapon2_y_start = 300; // Y start position for weapon 2
+weapon2_y_end = 380;   // Y end position for weapon 2
 
 // Create Event – Setup Shop Options
 if (global.shop_reset) {
