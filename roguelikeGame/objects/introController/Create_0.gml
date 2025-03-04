@@ -1,3 +1,7 @@
+// Set a random seed based on the current time (milliseconds)
+var random_seed = current_time;
+random_set_seed(random_seed);
+
 global.money = 50;
 
 global.wave_number = 1;
@@ -30,6 +34,3 @@ global.enemy_types = [enemy1Obj, enemy2Obj];
 
 global.iframes = 60;
 global.frame_count = 0;
-// Set a random seed based on the current time (milliseconds)
-var random_seed = current_time;  // Use current time in milliseconds
-random_set_seed(random_seed);  // Set the random seed

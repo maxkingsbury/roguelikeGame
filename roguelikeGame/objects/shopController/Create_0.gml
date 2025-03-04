@@ -15,9 +15,7 @@ if (global.shop_reset) {
     var available_weapons = [];
     for (var i = 0; i < array_length(global.weapon_pool); i++) {
         var weapon = global.weapon_pool[i];
-        if (!array_contains(global.acquired_weapons, weapon.name)) {
-            array_push(available_weapons, weapon);
-        }
+        array_push(available_weapons, weapon);
     }
 	if (array_length(available_weapons) >= 2) {
 	    // Step 2: Select two weapons based on rarity

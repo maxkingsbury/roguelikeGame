@@ -1,1 +1,0 @@
-global.frame_count += 1;

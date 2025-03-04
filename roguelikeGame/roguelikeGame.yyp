@@ -59,7 +59,6 @@
     {"id":{"name":"enemyProjObj","path":"objects/enemyProjObj/enemyProjObj.yy",},},
     {"id":{"name":"exitButton","path":"objects/exitButton/exitButton.yy",},},
     {"id":{"name":"fireballObj","path":"objects/fireballObj/fireballObj.yy",},},
-    {"id":{"name":"frameIncrement","path":"objects/frameIncrement/frameIncrement.yy",},},
     {"id":{"name":"fruitObj","path":"objects/fruitObj/fruitObj.yy",},},
     {"id":{"name":"gameController","path":"objects/gameController/gameController.yy",},},
     {"id":{"name":"iceShardObj","path":"objects/iceShardObj/iceShardObj.yy",},},

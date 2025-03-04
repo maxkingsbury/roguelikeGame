@@ -39,7 +39,6 @@
     {"name":"enemyProjObj","order":2,"path":"objects/enemyProjObj/enemyProjObj.yy",},
     {"name":"exitButton","order":4,"path":"objects/exitButton/exitButton.yy",},
     {"name":"fireballObj","order":1,"path":"objects/fireballObj/fireballObj.yy",},
-    {"name":"frameIncrement","order":4,"path":"objects/frameIncrement/frameIncrement.yy",},
     {"name":"fruitObj","order":1,"path":"objects/fruitObj/fruitObj.yy",},
     {"name":"gameController","order":1,"path":"objects/gameController/gameController.yy",},
     {"name":"iceShardObj","order":3,"path":"objects/iceShardObj/iceShardObj.yy",},
