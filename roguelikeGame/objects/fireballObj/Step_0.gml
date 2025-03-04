@@ -1,7 +1,7 @@
 // Move the projectile in the specified direction
 x += lengthdir_x(speed, direction);
 y += lengthdir_y(speed, direction);
-var fireballDamage = 1.5;
+var fireballDamage = 2.5;
 
 // Ensure the projectile only hits once
 if (!hit) {

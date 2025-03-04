@@ -60,6 +60,10 @@ if ((enemies_to_spawn == 0 && wave_active && !waiting) && (global.wave_timer <= 
 	with (enemy2Obj) {
         instance_destroy();
     }
+	with (fruitObj){
+		instance_destroy();
+	}
+	
 	global.enemy_count = instance_number(enemy1Obj);
 	global.shop_reset = true; // Enable shop reset after wave completion
     waiting = true;
@@ -86,4 +90,20 @@ if (global.player_xp >= global.xp_needed) {
     global.xp_needed *= 1.5; // Increase XP needed
 	global.player_level += 1;
 	global.levelUpCount += 1;
+}
+
+
+spawn_timer -= 1; // Decrease the timer
+
+if (spawn_timer <= 0) { // If the timer has finished
+    var chance = irandom(50); // Adjust probability (higher number = less frequent spawn)
+	var wid = display_get_width();
+	var hei = display_get_height();
+    if (chance == 0) { // Small chance to spawn each step
+        var random_x = irandom_range(50, wid - 50);
+        var random_y = irandom_range(50, hei - 50);
+
+        instance_create_layer(random_x, random_y, "Instances", fruitObj);
+        spawn_timer = min_spawn_time;
+    }
 }

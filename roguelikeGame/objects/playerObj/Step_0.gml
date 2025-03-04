@@ -38,7 +38,6 @@ function fire_weapon(weapon_name, direction) {
     } 
     else if (weapon_name == "Fire Staff") {
         proj = instance_create_layer(x, y, "Instances", fireballObj);
-		proj.direction = direction;
     }
 	else if (weapon_name == "Ice Staff") {
         proj = instance_create_layer(x, y, "Instances", iceShardObj);
@@ -106,11 +105,11 @@ if (speed_x == 0 && speed_y == 0) {
         }
         else if (weapon == "Fire Staff" && fire_timer_fireball <= 0) {
             fire_weapon("Fire Staff", angle_to_enemy);
-            fire_timer_fireball = global.fire_rate * 2; // Reset the cooldown for Fire Staff (longer cooldown)
+            fire_timer_fireball = global.fire_rate * 3; // Reset the cooldown for Fire Staff (longer cooldown)
         }
 		else if (weapon == "Ice Staff" && fire_timer_iceShard <= 0) {
             fire_weapon("Ice Staff", angle_to_enemy);
-            fire_timer_iceShard = global.fire_rate * 0.7; // Reset the cooldown for Fire Staff (longer cooldown)
+            fire_timer_iceShard = global.fire_rate * 1; // Reset the cooldown for Fire Staff (longer cooldown)
         }
 		else if (weapon == "Lightning Staff" && fire_timer_lightning <= 0) {
             fire_weapon("Lightning Staff", angle_to_enemy);

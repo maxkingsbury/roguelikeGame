@@ -1,6 +1,6 @@
 // Set initial speed and direction
-speed = 4; // Adjust as needed
-direction = 0; // This will be set when the projectile is created
-image_xscale = 2;
-image_yscale = 2;
+speed = 3; // Adjust as needed
+direction = irandom_range(0, 360);
+image_xscale = 8;
+image_yscale = 8;
 hit = false;  // Set to false initially, allowing the first collision to work

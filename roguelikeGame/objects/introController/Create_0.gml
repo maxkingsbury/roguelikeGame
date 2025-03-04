@@ -18,9 +18,10 @@ global.damageScalar = 1;
 global.enemy_count = 0;
 
 global.weapon_pool = [
-    {name: "Fire Staff", price: 10, weight: 5, bought : false, sprite : sFireStaff}, 
-    {name: "Ice Staff", price: 15, weight: 3, bought : false, sprite : sIceStaff}, 
-    {name: "Lightning Staff", price: 20, weight: 2, bought : false, sprite : sLightningStaff}, 
+    {name: "Fire Staff", price: 10, weight: 10, bought : false, sprite : sFireStaff}, 
+    {name: "Ice Staff", price: 15, weight: 6, bought : false, sprite : sIceStaff}, 
+    {name: "Lightning Staff", price: 20, weight: 4, bought : false, sprite : sLightningStaff},
+	{name: "Ancient Spell", price: 45, weight : 1, bought : false, sprite : sAncientSpell},
 ];
 global.acquired_weapons = ["Basic Wand"];
 global.shop_reset = true;
@@ -28,3 +29,7 @@ global.shop_reset = true;
 global.enemy_types = [enemy1Obj, enemy2Obj];
 
 global.iframes = 60;
+global.frame_count = 0;
+// Set a random seed based on the current time (milliseconds)
+var random_seed = current_time;  // Use current time in milliseconds
+random_set_seed(random_seed);  // Set the random seed
