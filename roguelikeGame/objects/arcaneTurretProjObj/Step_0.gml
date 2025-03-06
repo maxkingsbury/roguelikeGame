@@ -1,7 +1,8 @@
-// Move the projectile in the specified direction
+var arcaneTurretDamage = 0.6;
+
+// Move the projectile
 x += lengthdir_x(speed, direction);
 y += lengthdir_y(speed, direction);
-var fireballDamage = 4;
 
 // Ensure the projectile only hits once
 if (!hit) {
@@ -17,7 +18,7 @@ if (!hit) {
     if (enemy != noone) { // If an enemy is found
         with (enemy) {
             if (hp != undefined) {
-                hp -= fireballDamage * global.damageScalar;  // Apply damage
+                hp -= arcaneTurretDamage * global.damageScalar;  // Apply damage
             } 
         }
 

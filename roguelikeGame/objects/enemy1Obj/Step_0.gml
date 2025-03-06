@@ -2,7 +2,7 @@
 // Simple AI to follow the player
 var target_x = playerObj.x;
 var target_y = playerObj.y;
-var move_speed = 1; // Adjust as needed
+
 
 // Move towards the player
 move_towards_point(target_x, target_y, move_speed);

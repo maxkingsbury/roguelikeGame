@@ -1,5 +1,5 @@
 // Set initial speed and direction
-speed = 3; // Adjust as needed
+speed = 2; // Adjust as needed
 direction = irandom_range(0, 360);
 image_xscale = 8;
 image_yscale = 8;

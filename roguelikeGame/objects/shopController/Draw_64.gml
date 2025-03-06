@@ -15,18 +15,27 @@ draw_set_color(c_white);
 draw_text(screen_width / 2, 100, "Coins: " + string(global.money));
 
 draw_set_color(#333333); // Color for the clickable area rectangle
-draw_rectangle(650, 175, 1270, 450, false); // Weapons
+draw_rectangle(650, 175, 1270, 500, false); // Weapons
 draw_rectangle(400, 575, 1520, 850, false);
+draw_set_color(#959595);
+draw_rectangle(660, 425, 955, 490, false);
+draw_rectangle(965, 425, 1260, 490, false);
+
 
 
 draw_set_color(#4fd2ff); // Color for the clickable area rectangle
 draw_rectangle(weapon1_x_start * scale_x, weapon1_y_start * scale_y, weapon1_x_end * scale_x, weapon1_y_end * scale_y, false); // Weapon 1
 draw_rectangle(weapon2_x_start * scale_x, weapon2_y_start * scale_y, weapon2_x_end * scale_x, weapon2_y_end * scale_y, false); // Weapon 2
 
+draw_rectangle(weapon2_x_start * scale_x, weapon2_y_start * scale_y, weapon2_x_end * scale_x, weapon2_y_end * scale_y, false);
+
 draw_set_color(c_black);
 // Draw Weapon 1
 draw_text(screen_width / 2 - 150, 300, global.shop_weapon_1.name);
 draw_text(screen_width / 2 - 150, 340, "Price: " + string(global.shop_weapon_1.price));
+draw_set_font(fnt_mainSmall);
+draw_text(screen_width / 2 - 150, 430,  string(global.shop_weapon_1.description));
+draw_set_font(fnt_main);
 
 // Show "Bought" if weapon is already purchased
 if (global.shop_weapon_1.bought) {
@@ -40,6 +49,9 @@ if (global.shop_weapon_1.bought) {
 // Draw Weapon 2
 draw_text(screen_width / 2 + 150, 300, global.shop_weapon_2.name);
 draw_text(screen_width / 2 + 150, 340, "Price: " + string(global.shop_weapon_2.price));
+draw_set_font(fnt_mainSmall);
+draw_text(screen_width / 2 + 150, 430,  string(global.shop_weapon_2.description));
+draw_set_font(fnt_main);
 
 // Show "Bought" if weapon is already purchased
 if (global.shop_weapon_2.bought) {

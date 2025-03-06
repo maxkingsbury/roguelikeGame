@@ -4,7 +4,7 @@ y += lengthdir_y(speed, direction);
 
 // Keep the projectile image rotated in the direction it moves
 image_angle = direction;
-var iceShardDamage = 0.6;
+var iceShardDamage = 0.3;
 
 // Ensure the projectile only hits once
 if (!hit) {
@@ -19,6 +19,11 @@ if (!hit) {
 
     if (enemy != noone) { // If an enemy is found
         with (enemy) {
+			if(slow_count == 0){
+				move_speed *= 0.75;
+				slow_count++;
+			}
+			
             if (hp != undefined) {
                 hp -= iceShardDamage * global.damageScalar;  // Apply damage
             } 

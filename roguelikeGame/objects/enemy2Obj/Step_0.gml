@@ -1,12 +1,13 @@
 // Find the nearest player
 var target = instance_nearest(x, y, playerObj);
+// Simple AI to follow the player
+var target_x = playerObj.x;
+var target_y = playerObj.y;
+
+// Move towards the player
+move_towards_point(target_x, target_y, move_speed);
 
 if (target != noone) {
-    // Move slowly towards the player
-    var angle = point_direction(x, y, target.x, target.y);
-    x += lengthdir_x(1, angle);
-    y += lengthdir_y(1, angle);
-
     // Shooting Mechanic
     shoot_timer -= 1;
     if (shoot_timer <= 0) {
