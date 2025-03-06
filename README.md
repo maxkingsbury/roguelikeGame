@@ -1,19 +1,19 @@
-# Roguelike Game (GML)
+# Roguelike Game (name to be determined)
 
-A roguelike game built using GameMaker Language (GML), where players control a mage and battle through randomly spawned waves of enemies in a central tower. Features include:
+A roguelike game built using GameMaker Language (GML), where players control a mage and battle through randomly spawned waves of enemies. 
 
-
-- Player-controlled character: Move and fight with auto-attacks using projectiles.
+Features include:
+- Player-controlled character: Move and fight with auto-attacks using projectiles
   
-- Dynamic enemy waves: Enemies spawn and increase in difficulty with each wave.
+- Dynamic enemy waves: Enemies spawn and increase in difficulty with each wave
 
-- Upgrade system: Collect coins dropped by enemies to purchase upgrades and enhance your abilities.
+- Upgrade system: Collect coins dropped by enemies to buy upgrades
 
-- XP and leveling: Gain XP by defeating enemies and choose from 3 upgrade options when leveling up.
+- XP and leveling: Gain XP by defeating enemies and choose from 3 upgrade options when leveling up
   
-- Boss battles: Face powerful bosses at certain levels
+- Boss battles: Face powerful bosses at certain waves
   
-- Shop: Use currency to unlock special upgrades separate from level-ups.
+- Shop: Use currency to unlock special upgrades and weapons; separate from level-ups.
 
 
-This project is in active development and will evolve with more content, enemy variety.
+This project is in active development and will evolve with more content and enemy variety.
