@@ -7,22 +7,26 @@ var screen_height = display_get_height();
 
 // Draw Shop UI
 draw_set_halign(fa_center);
-draw_set_color(c_yellow);
 draw_set_font(fnt_mainBig);
-draw_text(screen_width / 2, 50, "SHOP");
-draw_set_font(fnt_main);
-draw_set_color(c_white);
-draw_text(screen_width / 2, 100, "Coins: " + string(global.money));
+
+draw_set_color(#333333);
+draw_rectangle(60, 300, 580, 370, false);
+draw_set_color(c_yellow);
+draw_text(320, 300, "Available coins: " + string(global.money));
+
+draw_set_color(#FFFFFF); 
+draw_rectangle(650, 100, 1270, 175, false);
 
 draw_set_color(#333333); // Color for the clickable area rectangle
 draw_rectangle(650, 175, 1270, 500, false); // Weapons
-draw_rectangle(400, 575, 1520, 850, false);
+draw_rectangle(400, 675, 1520, 1000, false);
 draw_set_color(#959595);
 draw_rectangle(660, 425, 955, 490, false);
 draw_rectangle(965, 425, 1260, 490, false);
 
-
-
+draw_set_color(c_black);
+draw_text(screen_width / 2, 100, "Weapons For Sale");
+draw_set_font(fnt_main);
 draw_set_color(#4fd2ff); // Color for the clickable area rectangle
 draw_rectangle(weapon1_x_start * scale_x, weapon1_y_start * scale_y, weapon1_x_end * scale_x, weapon1_y_end * scale_y, false); // Weapon 1
 draw_rectangle(weapon2_x_start * scale_x, weapon2_y_start * scale_y, weapon2_x_end * scale_x, weapon2_y_end * scale_y, false); // Weapon 2
