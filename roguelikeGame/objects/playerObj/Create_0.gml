@@ -19,6 +19,3 @@ fire_timer_fireball = 0;
 fire_timer_iceShard = 0;
 fire_timer_lightning = 0;
 
-if (!instance_exists(arcaneTurretObj) && (global.weapon_pool[4].bought == true)) {
-    instance_create_layer(x, y, "Instances", arcaneTurretObj);
-}

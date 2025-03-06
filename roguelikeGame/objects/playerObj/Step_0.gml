@@ -4,6 +4,9 @@ speed_y = 0;
 var w = display_get_width()
 var h = display_get_height()
 
+if (!instance_exists(arcaneTurretObj) && (global.weapon_pool[2].bought == true)) {
+    instance_create_layer(x, y, "Instances", arcaneTurretObj);
+}
 
 // Movement input
 if (keyboard_check(vk_right) || keyboard_check(ord("D"))) {

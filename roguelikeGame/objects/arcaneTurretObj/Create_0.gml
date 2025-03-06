@@ -1,5 +1,5 @@
-image_xscale = 4;
-image_yscale = 4;
+image_xscale = 2;
+image_yscale = 2;
 
 orbit_radius = 150; // Distance from the player
 orbit_speed = 1; // Speed of orbit

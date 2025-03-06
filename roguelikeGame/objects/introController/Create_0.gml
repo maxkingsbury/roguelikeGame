@@ -26,12 +26,12 @@ global.weapon_pool = [
 		description : "Shoots a large high damage\n fireball randomly"}, 
     {name: "Ice Staff", price: 15, weight: 6, bought : false, sprite : sIceStaff,
 		description : "Shoots a fast moving\n icicle that slows the enemy"}, 
+	{name: "Arcane Turret", price: 25, weight : 5, bought : false, sprite : sArcaneTurretShop,
+		description : "An autofiring turret\n with low damage"},
     {name: "Lightning Staff", price: 20, weight: 4, bought : false, sprite : sLightningStaff,
 		description : "A lightning bolt that\n chains between enemies"},
 	{name: "Ancient Spell", price: 45, weight : 1, bought : false, sprite : sAncientSpell,
-		description : "idk lol"},
-	{name: "Arcane Turret", price: 25, weight : 5, bought : false, sprite : sArcaneTurretShop,
-		description : "An autofiring turret\n with low damage"},
+		description : "idk lol"}
 ];
 global.acquired_weapons = ["Basic Wand"];
 global.shop_reset = true;
