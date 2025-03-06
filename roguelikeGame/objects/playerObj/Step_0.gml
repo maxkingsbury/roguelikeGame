@@ -1,22 +1,33 @@
 // Reset speed each frame
 speed_x = 0;
 speed_y = 0;
+var w = display_get_width()
+var h = display_get_height()
+
 
 // Movement input
 if (keyboard_check(vk_right) || keyboard_check(ord("D"))) {
-    speed_x = global.player_speed;
-    last_direction = -1; // Facing right
+    if (x + global.player_speed < room_width-45) { // Prevent moving out of bounds
+        speed_x = global.player_speed;
+        last_direction = -1; // Facing right
+    }
 } 
 if (keyboard_check(vk_left) || keyboard_check(ord("A"))) {
-    speed_x = -global.player_speed;
-    last_direction = 1; // Facing left
+    if (x - global.player_speed > 40) { // Prevent moving out of bounds
+        speed_x = -global.player_speed;
+        last_direction = 1; // Facing left
+    }
 }
 
 if (keyboard_check(ord("W"))) {
-    speed_y = -global.player_speed;
+    if (y - global.player_speed > 70) { // Prevent moving out of bounds
+        speed_y = -global.player_speed;
+    }
 }
 if (keyboard_check(ord("S"))) {
-    speed_y = global.player_speed;
+    if (y + global.player_speed < room_height-40) { // Prevent moving out of bounds
+        speed_y = global.player_speed;
+    }
 }
 
 // Apply movement
