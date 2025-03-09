@@ -3,9 +3,15 @@
 var target_x = playerObj.x;
 var target_y = playerObj.y;
 
-
 // Move towards the player
 move_towards_point(target_x, target_y, move_speed);
+
+// Flip sprite based on movement direction
+if (target_x < x) {
+    image_xscale = -4; // Flip left
+} else {
+    image_xscale = 4;  // Default right
+}
 
 // Only destroy the enemy once if its health reaches 0
 if (hp <= 0 && alive) {
