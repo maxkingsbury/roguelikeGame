@@ -39,8 +39,8 @@ y += speed_y;
 
 image_index = 0; // Reset to idle frame
 
-image_xscale = 5 * last_direction; // Keeps size 5 but flips left/right
-image_yscale = 5; // Ensure vertical scale stays correct
+image_xscale = -3 * last_direction; // Keeps size 5 but flips left/right
+image_yscale = 3; // Ensure vertical scale stays correct
 
 // Fire weapon function with individual cooldowns
 function fire_weapon(weapon_name, base_direction) {
@@ -84,7 +84,7 @@ if (speed_x == 0 && speed_y == 0) {
     var min_distance = 999999;
 
     // Find nearest enemy
-    var enemy_types = [enemy1Obj, enemy2Obj];
+    var enemy_types = global.enemy_types;
     for (var i = 0; i < array_length(enemy_types); i++) {
         var obj_type = enemy_types[i];
         var enemy_inst = instance_nearest(x, y, obj_type);

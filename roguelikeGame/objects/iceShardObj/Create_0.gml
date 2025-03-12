@@ -1,6 +1,6 @@
 
 // Set initial speed and direction
-speed = 8; // Adjust as needed
+speed = 5; // Adjust as needed
 direction = 0; // This will be set when the projectile is created
 image_xscale = 2;
 image_yscale = 2;
@@ -10,7 +10,7 @@ hit = false;  // Set to false initially, allowing the first collision to work
 var nearest_enemy = noone;
 var min_distance = 999999; 
 
-var enemy_types = [enemy1Obj, enemy2Obj]; // Add all enemy objects here
+var enemy_types = global.enemy_types; // Add all enemy objects here
 
 for (var i = 0; i < array_length(enemy_types); i++) {
     var enemy_inst = instance_nearest(x, y, enemy_types[i]);

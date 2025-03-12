@@ -1,5 +1,5 @@
 // Set initial speed and direction
-speed = 4; // Adjust as needed
+speed = 3; // Adjust as needed
 direction = 0; // This will be set when the projectile is created
 image_xscale = 2;
 image_yscale = 2;

@@ -8,7 +8,7 @@ var iceShardDamage = 0.3;
 
 // Ensure the projectile only hits once
 if (!hit) {
-    var enemy_types = [enemy1Obj, enemy2Obj]; // Add all enemy objects here
+    var enemy_types = global.enemy_types; // Add all enemy objects here
     var enemy = noone;
 
     // Loop through enemy types and find the first one at the projectile's position

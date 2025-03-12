@@ -36,7 +36,7 @@ global.weapon_pool = [
 global.acquired_weapons = ["Basic Wand"];
 global.shop_reset = true;
 
-global.enemy_types = [enemy1Obj, enemy2Obj];
+global.enemy_types = [enemyMermanMelee, enemyMermanMage, enemyMermanScout];
 
 global.iframes = 60;
 global.frame_count = 0;

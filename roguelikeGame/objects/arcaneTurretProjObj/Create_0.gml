@@ -1,5 +1,5 @@
 // Create Event
-speed = 4;
+speed = 3;
 image_xscale = 2.5;
 image_yscale = 2.5;
 hit = false;
