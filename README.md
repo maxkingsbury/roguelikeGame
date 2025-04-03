@@ -16,4 +16,4 @@ Features include:
 - Shop: Use currency to unlock special upgrades and weapons; separate from level-ups.
 
 
-This project is in active development and will evolve with more content and enemy variety.
+This project is only really a partial product and will likely remain that way.
