@@ -11,8 +11,6 @@ Features include:
 
 - XP and leveling: Gain XP by defeating enemies and choose from 3 upgrade options when leveling up
   
-- Boss battles: Face powerful bosses at certain waves
-  
 - Shop: Use currency to unlock special upgrades and weapons; separate from level-ups.
 
 
